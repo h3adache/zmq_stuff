@@ -14,7 +14,9 @@ class ZMQStrategy :
         if connect_strategy :
              self.connect_strategy = connect_strategy
 
-    def connect(self, url, socket_type=zmq.REQ) :
+    def connect(self, url='epgm://239.255.0.1:10001', socket_type=zmq.REQ) :
+        print 'connect with url=%s, socket_type=%s' % (url, socket_type)
         socket = self.context.socket(socket_type)
+
         self.connect_strategy(self, socket, url)
         return socket

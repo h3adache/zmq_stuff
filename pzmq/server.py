@@ -5,7 +5,7 @@ from datetime import datetime
 from time import sleep
 
 # pgm can only be used as pub/sub
-socket = ZMQStrategy(server_strategy).connect('epgm://239.255.0.1:10001', zmq.PUB)
+socket = ZMQStrategy(server_strategy).connect(socket_type=zmq.PUB)
 # socket = ZMQStrategy(server_strategy).connect('tcp://127.0.0.1:10001', zmq.REP)
 
 def start():

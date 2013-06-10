@@ -3,7 +3,7 @@ from zmq_strategy import ZMQStrategy
 from zmq_strategy import client_strategy
 
 # pgm can only be used as pub/sub
-socket = ZMQStrategy(client_strategy).connect('epgm://239.255.0.1:10001', zmq.SUB)
+socket = ZMQStrategy(client_strategy).connect(socket_type=zmq.SUB)
 #socket = ZMQStrategy(client_strategy).connect('tcp://127.0.0.1:10001')
 
 def echo(msg):
