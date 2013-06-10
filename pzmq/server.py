@@ -12,13 +12,13 @@ def start():
     while True:
         msg = socket.recv(copy=False)
         print "Server received %s" % msg
-        socket.send_multipart(["time", msg])
+        socket.send(msg)
         print "Server sent %s" % msg
 
 def multicast_start():
     while True:
 	time = datetime.now()
         msg = "The time is now %s" % time
-        socket.send(msg)
+        socket.send_multipart(["time", msg])
         print "Server sent %s" % msg
         sleep(1)
