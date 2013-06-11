@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+group = 'chengin'
+version = '1.0.0'
+buildDir = 'target'
+mainClassName = "chengin.JZMQSubscriber"
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+def jzmqVersion = '2.2.0'
+def jzmqClassifier = 'native-amd64-Linux-null-null'
+
+dependencies {
+    compile "org.zeromq:jzmq:$jzmqVersion"
+    compile "org.zeromq:jzmq:$jzmqVersion:$jzmqClassifier"
+}
+
+repositories {
+    mavenCentral()
+}
