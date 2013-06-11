@@ -9,8 +9,6 @@ public class JZMQSubscriber {
         final ZMQ.Context context = ZMQ.context(1);
         final ZMQ.Socket socket = context.socket(ZMQ.SUB);
 
-        socket.setMulticastLoop(true);
-
         socket.subscribe(topic.getBytes());
         socket.bind(address);
 
