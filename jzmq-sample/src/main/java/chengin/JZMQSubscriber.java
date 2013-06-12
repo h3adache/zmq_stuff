@@ -10,7 +10,7 @@ public class JZMQSubscriber {
         final ZMQ.Socket socket = context.socket(ZMQ.SUB);
 
         socket.subscribe(topic.getBytes());
-        socket.bind(address);
+        socket.connect(address);
 
         while(true) {
             final String message = socket.recvStr();
